@@ -1,14 +1,14 @@
 const http = require('http');
 const colors = require ('colors');
 const language= require ('language-translator');
-
+const fs = require ('fs');
 
 
     console.log("Escribe tu nombre");
     const Carlos = process.openStdin();
     
-    Carlos.addListener("data", function(d) {
-        console.log('HOLA '.green + 
+     const carl1 = Carlos.addListener("data", function(d) {
+        console.log('HOLA ' + 
             d.toString().trim());
         console.log('Hello '.red + 
             d.toString().trim());
@@ -18,9 +18,16 @@ const language= require ('language-translator');
             d.toString().trim());
             console.log('سلام '.yellow + 
             d.toString().trim());
+            fs.appendFile('Saludo.txt', 'Hola ' + d + ' Hello ' + d + ' Ola ' + d + ' Hallo ' + d +' سلام', (err) => {
+                if (err) throw err;
+                
+                console.log('Archivo Creado Satisfactoriamente');
+              });
       });
 
 
+
+     
 
 const handleServer = function (req, res){
 res.writeHead(200,{'Content-type': 'text/html'});
