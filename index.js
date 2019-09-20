@@ -8,11 +8,15 @@ const language= require ('language-translator');
     const Carlos = process.openStdin();
     
     Carlos.addListener("data", function(d) {
-        console.log('HOLA ' + 
+        console.log('HOLA '.green + 
             d.toString().trim());
-        console.log('Hello ' + 
+        console.log('Hello '.red + 
             d.toString().trim());
-            console.log('Ola ' + 
+            console.log('Ola '.blue + 
+            d.toString().trim());
+            console.log('Hallo '.gray + 
+            d.toString().trim());
+            console.log('سلام '.yellow + 
             d.toString().trim());
       });
 
