@@ -10,7 +10,9 @@ const language= require ('language-translator');
     Carlos.addListener("data", function(d) {
         console.log('HOLA ' + 
             d.toString().trim());
-        console.log('Hi ' + 
+        console.log('Hello ' + 
+            d.toString().trim());
+            console.log('Ola ' + 
             d.toString().trim());
       });
 
